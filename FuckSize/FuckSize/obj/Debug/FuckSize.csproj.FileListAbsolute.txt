@@ -1,0 +1,9 @@
+C:\Users\Vanya\CodeEditor\FuckSize\FuckSize\bin\Debug\FuckSize.exe.config
+C:\Users\Vanya\CodeEditor\FuckSize\FuckSize\bin\Debug\FuckSize.exe
+C:\Users\Vanya\CodeEditor\FuckSize\FuckSize\bin\Debug\FuckSize.pdb
+C:\Users\Vanya\CodeEditor\FuckSize\FuckSize\obj\Debug\FuckSize.csprojAssemblyReference.cache
+C:\Users\Vanya\CodeEditor\FuckSize\FuckSize\obj\Debug\FuckSize.Form1.resources
+C:\Users\Vanya\CodeEditor\FuckSize\FuckSize\obj\Debug\FuckSize.Properties.Resources.resources
+C:\Users\Vanya\CodeEditor\FuckSize\FuckSize\obj\Debug\FuckSize.csproj.GenerateResource.cache
+C:\Users\Vanya\CodeEditor\FuckSize\FuckSize\obj\Debug\FuckSize.exe
+C:\Users\Vanya\CodeEditor\FuckSize\FuckSize\obj\Debug\FuckSize.pdb
