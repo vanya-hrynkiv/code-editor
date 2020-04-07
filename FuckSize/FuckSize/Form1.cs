@@ -54,5 +54,10 @@ namespace FuckSize
                 mainInput.Font = fontDialog1.Font;
             }
         }
+
+        private void wordWrapToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            mainInput.WordWrap = !mainInput.WordWrap;
+        }
     }
 }
