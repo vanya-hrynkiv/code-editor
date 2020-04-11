@@ -18,6 +18,10 @@ namespace FuckSize
         public Form1()
         {
             InitializeComponent();
+            statusTBox.Height = 0;
+            statusTBox.Visible = false;
+            mainInput.Dock = DockStyle.Fill;
+            this.KeyPreview = true;
         }
 
         private void openFileBtn_Click(object sender, EventArgs e)
@@ -64,10 +68,23 @@ namespace FuckSize
 
         private void runToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            SharpCompiler();
+        }
+
+        private void Form1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.F5) 
+            { 
+                SharpCompiler();
+            }
+        }
+
+        public void SharpCompiler()
+        {
             this.statusTBox.Text = "";
 
             // Need for version of compiler
-            CSharpCodeProvider provider = new CSharpCodeProvider(new Dictionary<string, string> { { "CompilerVersion", "v4.0"} });
+            CSharpCodeProvider provider = new CSharpCodeProvider(new Dictionary<string, string> { { "CompilerVersion", "v4.0" } });
 
             // Need for create an exe file 
             // File name - test.exe (need create user interface for this)
@@ -89,9 +106,25 @@ namespace FuckSize
             else
             {
                 this.statusTBox.Text = "... Successfully ...";
-                
+
                 // Where need save exe file
                 Process.Start($"{Application.StartupPath}/test.exe");
+            }
+        }
+
+        private void consoleView_Click(object sender, EventArgs e)
+        {
+            if (statusTBox.Visible)
+            {
+                statusTBox.Height = 0;
+                statusTBox.Visible = false;
+                mainInput.Dock = DockStyle.Fill;
+            }
+            else
+            {
+                statusTBox.Height = 132;
+                statusTBox.Visible = true;
+                mainInput.Dock = DockStyle.None;
             }
         }
     }
