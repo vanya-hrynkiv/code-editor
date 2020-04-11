@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.mainInput = new System.Windows.Forms.TextBox();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.topPanel = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openFileBtn = new System.Windows.Forms.ToolStripMenuItem();
             this.saveFileBtn = new System.Windows.Forms.ToolStripMenuItem();
@@ -43,33 +43,34 @@
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.fontDialog1 = new System.Windows.Forms.FontDialog();
             this.statusTBox = new System.Windows.Forms.TextBox();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.bottomPanel = new System.Windows.Forms.Panel();
             this.consoleView = new System.Windows.Forms.Label();
-            this.menuStrip1.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.topPanel.SuspendLayout();
+            this.bottomPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // mainInput
             // 
             this.mainInput.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.mainInput.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mainInput.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.mainInput.Location = new System.Drawing.Point(0, 24);
             this.mainInput.Multiline = true;
             this.mainInput.Name = "mainInput";
             this.mainInput.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.mainInput.Size = new System.Drawing.Size(967, 376);
+            this.mainInput.Size = new System.Drawing.Size(967, 515);
             this.mainInput.TabIndex = 0;
             // 
-            // menuStrip1
+            // topPanel
             // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.topPanel.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
             this.editToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(967, 24);
-            this.menuStrip1.TabIndex = 1;
-            this.menuStrip1.Text = "menuStrip1";
+            this.topPanel.Location = new System.Drawing.Point(0, 0);
+            this.topPanel.Name = "topPanel";
+            this.topPanel.Size = new System.Drawing.Size(967, 24);
+            this.topPanel.TabIndex = 1;
+            this.topPanel.Text = "menuStrip1";
             // 
             // fileToolStripMenuItem
             // 
@@ -153,23 +154,23 @@
             // 
             this.statusTBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.statusTBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.statusTBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.statusTBox.Font = new System.Drawing.Font("Consolas", 11.25F);
-            this.statusTBox.Location = new System.Drawing.Point(0, 395);
+            this.statusTBox.Location = new System.Drawing.Point(0, 423);
             this.statusTBox.Multiline = true;
             this.statusTBox.Name = "statusTBox";
             this.statusTBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.statusTBox.Size = new System.Drawing.Size(967, 132);
+            this.statusTBox.Size = new System.Drawing.Size(967, 93);
             this.statusTBox.TabIndex = 2;
             // 
-            // panel1
+            // bottomPanel
             // 
-            this.panel1.Controls.Add(this.consoleView);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 519);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(967, 20);
-            this.panel1.TabIndex = 4;
+            this.bottomPanel.Controls.Add(this.consoleView);
+            this.bottomPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.bottomPanel.Location = new System.Drawing.Point(0, 519);
+            this.bottomPanel.Name = "bottomPanel";
+            this.bottomPanel.Size = new System.Drawing.Size(967, 20);
+            this.bottomPanel.TabIndex = 4;
             // 
             // consoleView
             // 
@@ -188,19 +189,19 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(967, 539);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.bottomPanel);
             this.Controls.Add(this.statusTBox);
             this.Controls.Add(this.mainInput);
-            this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.topPanel);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MainMenuStrip = this.menuStrip1;
+            this.MainMenuStrip = this.topPanel;
             this.Name = "Form1";
             this.Text = "FuckSize Editor";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.topPanel.ResumeLayout(false);
+            this.topPanel.PerformLayout();
+            this.bottomPanel.ResumeLayout(false);
+            this.bottomPanel.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -209,7 +210,7 @@
         #endregion
 
         private System.Windows.Forms.TextBox mainInput;
-        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.MenuStrip topPanel;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem saveFileBtn;
         private System.Windows.Forms.ToolStripMenuItem exitBtn;
@@ -222,7 +223,7 @@
         private System.Windows.Forms.ToolStripMenuItem wordWrapToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem runToolStripMenuItem;
 		private System.Windows.Forms.TextBox statusTBox;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel bottomPanel;
         private System.Windows.Forms.Label consoleView;
     }
 }

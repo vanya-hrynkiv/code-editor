@@ -122,7 +122,7 @@ namespace FuckSize
             }
             else
             {
-                statusTBox.Height = 132;
+                statusTBox.Height = 93;
                 statusTBox.Visible = true;
                 mainInput.Dock = DockStyle.None;
             }
