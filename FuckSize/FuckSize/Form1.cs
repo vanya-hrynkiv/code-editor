@@ -1,13 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+
+//--------- For Compiller -------------
+using System.CodeDom.Compiler;
+using System.Diagnostics;
+using Microsoft.CSharp;
+using System.Collections.Generic;
+using System.Linq;
+//-------------------------------------
 
 namespace FuckSize
 {
@@ -58,6 +60,39 @@ namespace FuckSize
         private void wordWrapToolStripMenuItem_Click(object sender, EventArgs e)
         {
             mainInput.WordWrap = !mainInput.WordWrap;
+        }
+
+        private void runToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.statusTBox.Text = "";
+
+            // Need for version of compiler
+            CSharpCodeProvider provider = new CSharpCodeProvider(new Dictionary<string, string> { { "CompilerVersion", "v4.0"} });
+
+            // Need for create an exe file 
+            // File name - test.exe (need create user interface for this)
+            CompilerParameters parameters = new CompilerParameters(new string[] { "mscorlib.dll", "System.Core.dll" }, "test.exe", true);
+
+            parameters.GenerateExecutable = true;
+
+            // Catch errors (if it exists)
+            CompilerResults results = provider.CompileAssemblyFromSource(parameters, this.mainInput.Text);
+
+            if (results.Errors.HasErrors)
+            {
+                // Write all the mistakes
+                foreach (CompilerError error in results.Errors.Cast<CompilerError>())
+                {
+                    this.statusTBox.Text += $"Line {error.Line}:    {error.ErrorText}";
+                }
+            }
+            else
+            {
+                this.statusTBox.Text = "... Successfully ...";
+                
+                // Where need save exe file
+                Process.Start($"{Application.StartupPath}/test.exe");
+            }
         }
     }
 }
